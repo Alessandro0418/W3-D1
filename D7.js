@@ -2,11 +2,25 @@
   Scrivi una funzione per concatenare due stringhe ricevute come parametri, selezionando solamente i primi 2 caratteri della
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
-// -----------------------
+const concatString = function (s1, s2) {
+  const combined = s1.slice(0, 2) + s2.slice(-3);
+  return combined.toUpperCase();
+};
+console.log(concatString("hello", "world"));
+
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
-// -----------------------
+const return10Random = function () {
+  const array = [];
+
+  for (let i = 0; i < 10; i++) {
+    const randomValue = Math.floor(Math.random() * 101);
+    array.push(randomValue);
+  }
+  return array;
+};
+
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
@@ -35,16 +49,40 @@ console.log("Somma con Reduce", sumReduce);
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
-// -----------------------
+// const increment = function (array, n) {
+//   const newArray = array.map((value) => {
+//     return value + n;
+//   });
+//   return newArray;
+// };
+// console.log(increment([4, 78, 32, 18]));
+
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
-// -----------------------
+const countCharachters = function (arr) {
+  const arrayOfLengths = arr.map((str) => {
+    return str.length;
+  });
+  return arrayOfLengths;
+};
+console.log(countCharachters(["Epicode", "is", "great"]));
+
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
-// -----------------------
+const countOdds = function () {
+  const dispariArray = [];
+  for (let i = 0; i < 100; i++) {
+    if (i % 2 !== 0) {
+      dispariArray.push(i);
+    }
+  }
+  return dispariArray;
+};
+console.log(countOdds());
+
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
   {
